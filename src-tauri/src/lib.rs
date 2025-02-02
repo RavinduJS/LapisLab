@@ -1,8 +1,16 @@
-// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
+mod mc_server;
+mod utils;
+mod mc_commands;
+
 #[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
+async fn greet()->Result<String, String> {
+
+    Ok(("every ok").to_string())
+    
 }
+
+
+
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
